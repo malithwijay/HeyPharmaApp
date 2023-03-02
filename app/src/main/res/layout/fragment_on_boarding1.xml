@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnBoarding1Fragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:src="@drawable/walkthrough1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="280dp"
+            android:layout_marginEnd="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/walkthrough1Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Quick And Easy Ordering Process"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textColor="@color/bluegreen" />
+
+            <TextView
+                android:id="@+id/walkthrough1Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="We understand your schedules and do everything we can to make your life easier. Now you could order your medicine online from the  nearest pharmacy via Heypharma "
+                android:textAlignment="center"
+                android:textSize="15dp"
+                android:textColor="@color/darkgray" />
+
+            <ImageView
+                android:id="@+id/swipe"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:src="@drawable/swipe" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</FrameLayout>

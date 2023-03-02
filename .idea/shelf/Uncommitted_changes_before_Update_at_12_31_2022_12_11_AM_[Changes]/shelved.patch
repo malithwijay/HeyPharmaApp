@@ -1,0 +1,1967 @@
+Index: app/src/main/res/layout/activity_dashboard.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:id=\"@+id/topprofilebar\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".Dashboard\"\r\n    android:background=\"@color/white\">\r\n\r\n\r\n\r\n    <com.google.android.material.appbar.AppBarLayout\r\n        android:id=\"@+id/appBarLayout\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:background=\"@drawable/rounded_bottom_appbar\"\r\n        app:elevation=\"0dp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n        <androidx.constraintlayout.widget.ConstraintLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:padding=\"15dp\">\r\n\r\n            <androidx.appcompat.widget.Toolbar\r\n                android:id=\"@+id/myToolbar\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"50dp\"\r\n                android:background=\"@color/bluegreen\"\r\n                android:minHeight=\"?attr/actionBarSize\"\r\n                android:theme=\"?attr/actionBarTheme\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintHorizontal_bias=\"0.0\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n            <de.hdodenhof.circleimageview.CircleImageView\r\n                android:id=\"@+id/profile_image\"\r\n                android:layout_width=\"48dp\"\r\n                android:layout_height=\"48dp\"\r\n                android:src=\"@drawable/profile3\"\r\n                app:layout_constraintBottom_toBottomOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/appname\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"12dp\"\r\n                android:text=\"HEY PHARMA\"\r\n                android:textColor=\"@color/lightblue\"\r\n                android:textSize=\"20sp\"\r\n                app:layout_constraintStart_toEndOf=\"@+id/profile_image\"\r\n                app:layout_constraintTop_toTopOf=\"@+id/profile_image\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/welcome\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"Welcome Back Disha \"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"16sp\"\r\n                app:layout_constraintStart_toStartOf=\"@+id/appname\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/appname\" />\r\n\r\n            <ImageView\r\n               android:id=\"@+id/notificationsImage\"\r\n               android:layout_width=\"30dp\"\r\n               android:layout_height=\"30dp\" android:visibility=\"invisible\"\r\n               android:src=\"@drawable/ic_baseline_home_24\"\r\n               app:layout_constraintEnd_toEndOf=\"parent\"\r\n               app:layout_constraintTop_toTopOf=\"@+id/profile_image\" />\r\n\r\n\r\n        </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n    </com.google.android.material.appbar.AppBarLayout>\r\n\r\n    <com.google.android.material.textview.MaterialTextView\r\n        android:id=\"@+id/Dashboard\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"32dp\"\r\n        android:layout_marginTop=\"10dp\"\r\n        android:layout_marginEnd=\"32dp\"\r\n        android:layout_marginBottom=\"24dp\"\r\n        android:text=\"DASHBOARD \"\r\n        android:textColor=\"@color/bluegreen\"\r\n        android:textSize=\"24dp\"\r\n        android:textStyle=\"bold\"\r\n        app:layout_constraintTop_toBottomOf=\"@id/appBarLayout\"\r\n        tools:ignore=\"MissingConstraints\" />\r\n\r\n\r\n    <ScrollView\r\n\r\n        android:layout_width=\"fill_parent\"\r\n        android:layout_height=\"410dp\">\r\n\r\n        <androidx.constraintlayout.widget.ConstraintLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\">\r\n\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:id=\"@+id/FindMed\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"32dp\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:clickable=\"true\"\r\n                app:cardBackgroundColor=\"@color/white\"\r\n                app:cardCornerRadius=\"15dp\"\r\n                app:cardElevation=\"10dp\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\"\r\n                tools:ignore=\"MissingConstraints\">\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <ImageView\r\n                        android:layout_width=\"90dp\"\r\n                        android:layout_height=\"90dp\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:layout_marginLeft=\"20dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginRight=\"20dp\"\r\n                        android:contentDescription=\"\"\r\n                        android:scaleType=\"centerCrop\"\r\n                        app:srcCompat=\"@drawable/scan\" />\r\n\r\n                    <TextView\r\n                        android:layout_width=\"wrap_content\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:layout_marginLeft=\"12dp\"\r\n                        android:layout_marginRight=\"12dp\"\r\n                        android:layout_marginBottom=\"8dp\"\r\n                        android:text=\"Find Med\"\r\n                        android:textAlignment=\"center\"\r\n                        android:textAppearance=\"?attr/textAppearanceHeadline6\"\r\n                        android:textColor=\"@color/darkgray\" />\r\n                </LinearLayout>\r\n\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:id=\"@+id/MyPrescriptions\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:layout_marginEnd=\"32dp\"\r\n                android:clickable=\"true\"\r\n                app:cardBackgroundColor=\"@color/white\"\r\n                app:cardCornerRadius=\"15dp\"\r\n                app:cardElevation=\"10dp\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\"\r\n                tools:ignore=\"MissingConstraints\">\r\n\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <ImageView\r\n                        android:layout_width=\"90dp\"\r\n                        android:layout_height=\"90dp\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:layout_marginLeft=\"20dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginRight=\"20dp\"\r\n                        android:contentDescription=\"\"\r\n                        android:scaleType=\"centerCrop\"\r\n                        app:srcCompat=\"@drawable/prescription\" />\r\n\r\n                    <TextView\r\n                        android:layout_width=\"wrap_content\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:layout_marginLeft=\"12dp\"\r\n                        android:layout_marginRight=\"12dp\"\r\n                        android:layout_marginBottom=\"8dp\"\r\n                        android:text=\"My Prescriptions\"\r\n                        android:textAlignment=\"center\"\r\n                        android:textAppearance=\"?attr/textAppearanceHeadline6\"\r\n                        android:textColor=\"@color/darkgray\" />\r\n                </LinearLayout>\r\n\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:id=\"@+id/Pharmacy\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"32dp\"\r\n                android:layout_marginTop=\"15dp\"\r\n                android:layout_marginEnd=\"32dp\"\r\n                android:clickable=\"true\"\r\n                app:cardBackgroundColor=\"@color/white\"\r\n                app:cardCornerRadius=\"15dp\"\r\n                app:cardElevation=\"10dp\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/FindMed\"\r\n                tools:ignore=\"MissingConstraints\">\r\n\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:orientation=\"horizontal\">\r\n\r\n                    <ImageView\r\n                        android:layout_width=\"90dp\"\r\n                        android:layout_height=\"90dp\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:layout_marginLeft=\"25dp\"\r\n                        android:layout_marginTop=\"8dp\"\r\n                        android:layout_marginRight=\"20dp\"\r\n                        android:layout_marginBottom=\"8dp\"\r\n                        android:contentDescription=\"\"\r\n                        android:scaleType=\"centerCrop\"\r\n                        app:srcCompat=\"@drawable/pharmacy\" />\r\n\r\n                    <TextView\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:text=\"Pharmacy\"\r\n                        android:textAlignment=\"center\"\r\n                        android:textAppearance=\"?attr/textAppearanceHeadline6\"\r\n                        android:textColor=\"@color/darkgray\" />\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:id=\"@+id/GetQuote\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"32dp\"\r\n                android:layout_marginTop=\"15dp\"\r\n                android:layout_marginEnd=\"32dp\"\r\n                android:layout_marginBottom=\"32dp\"\r\n                android:clickable=\"true\"\r\n                app:cardBackgroundColor=\"@color/white\"\r\n                app:cardCornerRadius=\"15dp\"\r\n                app:cardElevation=\"10dp\"\r\n                app:layout_constraintBottom_toBottomOf=\"parent\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/Pharmacy\"\r\n                tools:ignore=\"DuplicateIds,MissingConstraints\">\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:orientation=\"horizontal\">\r\n\r\n                    <ImageView\r\n                        android:layout_width=\"90dp\"\r\n                        android:layout_height=\"90dp\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:layout_marginLeft=\"25dp\"\r\n                        android:layout_marginTop=\"8dp\"\r\n                        android:layout_marginRight=\"20dp\"\r\n                        android:layout_marginBottom=\"8dp\"\r\n                        android:contentDescription=\"\"\r\n                        android:scaleType=\"centerCrop\"\r\n                        app:srcCompat=\"@drawable/drugs\" />\r\n\r\n                    <TextView\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:text=\"Get Quote\"\r\n                        android:textAlignment=\"center\"\r\n                        android:textAppearance=\"?attr/textAppearanceHeadline6\"\r\n                        android:textColor=\"@color/darkgray\" />\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n\r\n        </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n    </ScrollView>\r\n\r\n    <androidx.coordinatorlayout.widget.CoordinatorLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"@android:color/transparent\">\r\n\r\n        <com.google.android.material.bottomappbar.BottomAppBar\r\n            android:id=\"@+id/bottomAppBar\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"bottom\"\r\n            app:fabCradleMargin=\"20dp\"\r\n            app:fabCradleRoundedCornerRadius=\"20dp\"\r\n            app:fabCradleVerticalOffset=\"10dp\">\r\n\r\n            <com.google.android.material.bottomnavigation.BottomNavigationView\r\n                android:id=\"@+id/bottomNavigationView\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"match_parent\"\r\n                android:layout_marginEnd=\"12dp\"\r\n                android:background=\"@android:color/transparent\"\r\n                app:menu=\"@menu/bottom_nav_menu\" />\r\n\r\n        </com.google.android.material.bottomappbar.BottomAppBar>\r\n\r\n        <com.google.android.material.floatingactionbutton.FloatingActionButton\r\n            android:id=\"@+id/fab\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:src=\"@drawable/ic_add\"\r\n            app:layout_anchor=\"@id/bottomAppBar\"\r\n            android:backgroundTint=\"@color/bluegreen\"/>\r\n\r\n    </androidx.coordinatorlayout.widget.CoordinatorLayout>\r\n\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_dashboard.xml b/app/src/main/res/layout/activity_dashboard.xml
+--- a/app/src/main/res/layout/activity_dashboard.xml	(revision 884b0e39d8c378dc9955de3210f40684f75d4b33)
++++ b/app/src/main/res/layout/activity_dashboard.xml	(date 1670841896000)
+@@ -101,7 +101,7 @@
+     <ScrollView
+ 
+         android:layout_width="fill_parent"
+-        android:layout_height="410dp">
++        android:layout_height="380dp">
+ 
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:layout_width="match_parent"
+@@ -145,7 +145,7 @@
+                         android:layout_marginLeft="12dp"
+                         android:layout_marginRight="12dp"
+                         android:layout_marginBottom="8dp"
+-                        android:text="Find Med"
++                        android:text="Find\nMed"
+                         android:textAlignment="center"
+                         android:textAppearance="?attr/textAppearanceHeadline6"
+                         android:textColor="@color/darkgray" />
+@@ -192,7 +192,7 @@
+                         android:layout_marginLeft="12dp"
+                         android:layout_marginRight="12dp"
+                         android:layout_marginBottom="8dp"
+-                        android:text="My Prescriptions"
++                        android:text="My\nPrescriptions"
+                         android:textAlignment="center"
+                         android:textAppearance="?attr/textAppearanceHeadline6"
+                         android:textColor="@color/darkgray" />
+@@ -278,7 +278,7 @@
+                         android:layout_marginBottom="8dp"
+                         android:contentDescription=""
+                         android:scaleType="centerCrop"
+-                        app:srcCompat="@drawable/drugs" />
++                        app:srcCompat="@drawable/quote" />
+ 
+                     <TextView
+                         android:layout_width="match_parent"
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 884b0e39d8c378dc9955de3210f40684f75d4b33)
++++ /dev/null	(revision 884b0e39d8c378dc9955de3210f40684f75d4b33)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: app/src/main/res/layout/activity_profile.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:id=\"@+id/topprofilebar\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".Profile\"\r\n    android:background=\"@color/white\">\r\n\r\n\r\n\r\n    <com.google.android.material.appbar.AppBarLayout\r\n        android:id=\"@+id/appBarLayout\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:background=\"@drawable/rounded_bottom_appbar\"\r\n        app:elevation=\"0dp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n        <androidx.constraintlayout.widget.ConstraintLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:padding=\"10dp\">\r\n\r\n            <androidx.appcompat.widget.Toolbar\r\n                android:id=\"@+id/myToolbar\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"50dp\"\r\n                android:background=\"@color/bluegreen\"\r\n                android:minHeight=\"?attr/actionBarSize\"\r\n                android:theme=\"?attr/actionBarTheme\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintHorizontal_bias=\"0.0\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n            <de.hdodenhof.circleimageview.CircleImageView\r\n                android:id=\"@+id/profile_image\"\r\n                android:layout_width=\"48dp\"\r\n                android:layout_height=\"48dp\"\r\n                android:src=\"@drawable/profile3\"\r\n                app:layout_constraintBottom_toBottomOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/appname\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"12dp\"\r\n                android:text=\"HEY PHARMA\"\r\n                android:textColor=\"@color/lightblue\"\r\n                android:textSize=\"20sp\"\r\n                app:layout_constraintStart_toEndOf=\"@+id/profile_image\"\r\n                app:layout_constraintTop_toTopOf=\"@+id/profile_image\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/welcome\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"Welcome BACK \"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"14sp\"\r\n                app:layout_constraintStart_toStartOf=\"@+id/appname\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/appname\" />\r\n\r\n            <ImageView\r\n                android:id=\"@+id/notificationsImage\"\r\n                android:layout_width=\"30dp\"\r\n                android:layout_height=\"30dp\" android:visibility=\"invisible\"\r\n                android:src=\"@drawable/ic_baseline_home_24\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"@+id/profile_image\" />\r\n\r\n\r\n        </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n    </com.google.android.material.appbar.AppBarLayout>\r\n\r\n    <com.google.android.material.textview.MaterialTextView\r\n        android:id=\"@+id/profile\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"32dp\"\r\n        android:layout_marginTop=\"10dp\"\r\n        android:layout_marginEnd=\"32dp\"\r\n        android:layout_marginBottom=\"10dp\"\r\n        android:text=\"PROFILE \"\r\n        android:textColor=\"@color/bluegreen\"\r\n        android:textSize=\"24dp\"\r\n        android:textStyle=\"bold\"\r\n        app:layout_constraintTop_toBottomOf=\"@id/appBarLayout\"\r\n        tools:ignore=\"MissingConstraints\" />\r\n\r\n\r\n    <ScrollView\r\n\r\n        android:layout_width=\"fill_parent\"\r\n        android:layout_height=\"380dp\">\r\n\r\n        <androidx.constraintlayout.widget.ConstraintLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\">\r\n\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:id=\"@+id/UsernameAndPictureView\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"32dp\"\r\n                android:layout_marginTop=\"15dp\"\r\n                android:layout_marginEnd=\"32dp\"\r\n                app:cardBackgroundColor=\"@color/white\"\r\n                app:cardCornerRadius=\"15dp\"\r\n                app:cardElevation=\"10dp\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\"\r\n                tools:ignore=\"DuplicateIds,MissingConstraints\">\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:orientation=\"horizontal\">\r\n\r\n                    <de.hdodenhof.circleimageview.CircleImageView\r\n                        android:id=\"@+id/profile_image_update\"\r\n                        android:layout_width=\"80dp\"\r\n                        android:layout_height=\"80dp\"\r\n                        android:layout_marginLeft=\"15dp\"\r\n                        android:layout_marginTop=\"15dp\"\r\n                        android:layout_marginRight=\"15dp\"\r\n                        android:layout_marginBottom=\"15dp\"\r\n                        android:src=\"@drawable/profile3\"\r\n                        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n                    <TextView\r\n                        android:id=\"@+id/textProfileUsername\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:layout_marginLeft=\"15dp\"\r\n                        android:layout_marginRight=\"15dp\"\r\n                        android:text=\"Disha\"\r\n                        android:textAppearance=\"?attr/textAppearanceHeadline6\"\r\n                        android:textColor=\"@color/darkgray\"\r\n                        android:textSize=\"32dp\" />\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:id=\"@+id/ProfileDetailsCard\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"32dp\"\r\n                android:layout_marginEnd=\"32dp\"\r\n                app:cardBackgroundColor=\"@color/white\"\r\n                app:cardCornerRadius=\"15dp\"\r\n                app:cardElevation=\"10dp\"\r\n                app:layout_constraintBottom_toBottomOf=\"parent\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toBottomOf=\"@id/UsernameAndPictureView\"\r\n                tools:ignore=\"MissingConstraints\">\r\n\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <TextView\r\n                        android:id=\"@+id/userDetails\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:text=\"User Details\"\r\n                        android:textAlignment=\"center\"\r\n                        android:textAppearance=\"?attr/textAppearanceHeadline6\"\r\n                        android:textColor=\"@color/darkgray\" />\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputProfileName\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:hint=\"Name\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/userDetails\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputProfile\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputProfileDob\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:hint=\"Birthdate\"\r\n                        app:boxStrokeColor=\"@color/lightblue\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/InputProfileName\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputProfileDob\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputProfileTp\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:hint=\"Telephone\"\r\n                        app:boxStrokeColor=\"@color/lightblue\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/InputProfileDob\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputProfileTp\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputProfileAddress\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:hint=\"Address\"\r\n                        app:boxStrokeColor=\"@color/lightblue\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/InputProfileTp\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputProfileAddress\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputProfileEmail\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:hint=\"Email\"\r\n                        app:boxStrokeColor=\"@color/lightblue\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/InputProfileAddress\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputProfileEmail\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputAddressLine1Tp\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:layout_marginBottom=\"15dp\"\r\n                        android:hint=\"Telephone\"\r\n                        app:boxStrokeColor=\"@color/lightblue\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/InputProvince\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputTp\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n            <com.google.android.material.button.MaterialButton\r\n                android:id=\"@+id/btnProfileUpdate\"\r\n                style=\"@style/Widget.MaterialComponents.Button\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"32dp\"\r\n                android:layout_marginTop=\"15dp\"\r\n                android:layout_marginEnd=\"32dp\"\r\n                android:layout_marginBottom=\"32dp\"\r\n                android:backgroundTint=\"@color/bluegreen\"\r\n                android:text=\"UPDATE\"\r\n                android:textColor=\"@color/white\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toBottomOf=\"@id/ProfileDetailsCard\"\r\n                tools:ignore=\"MissingConstraints\" />\r\n\r\n\r\n        </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n    </ScrollView>\r\n\r\n    <androidx.coordinatorlayout.widget.CoordinatorLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"@android:color/transparent\">\r\n\r\n        <com.google.android.material.bottomappbar.BottomAppBar\r\n            android:id=\"@+id/bottomAppBar\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"bottom\"\r\n            app:fabCradleMargin=\"20dp\"\r\n            app:fabCradleRoundedCornerRadius=\"20dp\"\r\n            app:fabCradleVerticalOffset=\"10dp\">\r\n\r\n            <com.google.android.material.bottomnavigation.BottomNavigationView\r\n                android:id=\"@+id/bottomNavigationView\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"match_parent\"\r\n                android:layout_marginEnd=\"15dp\"\r\n                android:background=\"@android:color/transparent\"\r\n                app:menu=\"@menu/bottom_nav_menu\" />\r\n\r\n        </com.google.android.material.bottomappbar.BottomAppBar>\r\n\r\n        <com.google.android.material.floatingactionbutton.FloatingActionButton\r\n            android:id=\"@+id/fab\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:src=\"@drawable/ic_add\"\r\n            app:layout_anchor=\"@id/bottomAppBar\"\r\n            android:backgroundTint=\"@color/bluegreen\"/>\r\n\r\n    </androidx.coordinatorlayout.widget.CoordinatorLayout>\r\n\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_profile.xml b/app/src/main/res/layout/activity_profile.xml
+--- a/app/src/main/res/layout/activity_profile.xml	(revision 884b0e39d8c378dc9955de3210f40684f75d4b33)
++++ b/app/src/main/res/layout/activity_profile.xml	(date 1670840810000)
+@@ -100,6 +100,7 @@
+ 
+     <ScrollView
+ 
++
+         android:layout_width="fill_parent"
+         android:layout_height="380dp">
+ 
+@@ -204,7 +205,7 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputProfile"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
+                     <com.google.android.material.textfield.TextInputLayout
+@@ -225,7 +226,7 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputProfileDob"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
+                     <com.google.android.material.textfield.TextInputLayout
+@@ -246,7 +247,7 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputProfileTp"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
+                     <com.google.android.material.textfield.TextInputLayout
+@@ -267,7 +268,7 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputProfileAddress"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
+                     <com.google.android.material.textfield.TextInputLayout
+@@ -288,7 +289,7 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputProfileEmail"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
+                     <com.google.android.material.textfield.TextInputLayout
+@@ -310,9 +311,10 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputTp"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
++
+                 </LinearLayout>
+             </com.google.android.material.card.MaterialCardView>
+ 
+@@ -338,6 +340,9 @@
+ 
+     </ScrollView>
+ 
++
++
++
+     <androidx.coordinatorlayout.widget.CoordinatorLayout
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent"
+@@ -372,5 +377,4 @@
+ 
+     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+ 
+-
+ </LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_pharmacy.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_pharmacy.xml b/app/src/main/res/layout/activity_pharmacy.xml
+new file mode 100644
+--- /dev/null	(date 1672420781795)
++++ b/app/src/main/res/layout/activity_pharmacy.xml	(date 1672420781795)
+@@ -0,0 +1,192 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:id="@+id/topprofilebar"
++    android:orientation="vertical"
++    tools:context=".Pharmacy"
++    android:background="@color/white">
++
++
++
++    <com.google.android.material.appbar.AppBarLayout
++        android:id="@+id/appBarLayout"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="@drawable/rounded_bottom_appbar"
++        app:elevation="0dp"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:padding="10dp">
++
++            <androidx.appcompat.widget.Toolbar
++                android:id="@+id/myToolbar"
++                android:layout_width="match_parent"
++                android:layout_height="50dp"
++                android:background="@color/bluegreen"
++                android:minHeight="?attr/actionBarSize"
++                android:theme="?attr/actionBarTheme"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.0"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <de.hdodenhof.circleimageview.CircleImageView
++                android:id="@+id/profile_image"
++                android:layout_width="48dp"
++                android:layout_height="48dp"
++                android:src="@drawable/profile3"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <TextView
++                android:id="@+id/appname"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="12dp"
++                android:text="HEY PHARMA"
++                android:textColor="@color/lightblue"
++                android:textSize="20sp"
++                app:layout_constraintStart_toEndOf="@+id/profile_image"
++                app:layout_constraintTop_toTopOf="@+id/profile_image" />
++
++            <TextView
++                android:id="@+id/welcome"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="Welcome Back Disha "
++                android:textColor="@color/black"
++                android:textSize="14sp"
++                app:layout_constraintStart_toStartOf="@+id/appname"
++                app:layout_constraintTop_toBottomOf="@+id/appname" />
++
++            <ImageView
++                android:id="@+id/notificationsImage"
++                android:layout_width="30dp"
++                android:layout_height="30dp" android:visibility="invisible"
++                android:src="@drawable/ic_baseline_home_24"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintTop_toTopOf="@+id/profile_image" />
++
++
++        </androidx.constraintlayout.widget.ConstraintLayout>
++
++    </com.google.android.material.appbar.AppBarLayout>
++
++    <com.google.android.material.textview.MaterialTextView
++        android:id="@+id/Pharmacy"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="32dp"
++        android:layout_marginTop="10dp"
++        android:layout_marginEnd="32dp"
++        android:layout_marginBottom="10dp"
++        android:text="PHARMACY "
++        android:textColor="@color/bluegreen"
++        android:textSize="24dp"
++        android:textStyle="bold"
++        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
++        tools:ignore="MissingConstraints" />
++
++
++    <ScrollView
++
++        android:layout_width="fill_parent"
++        android:layout_height="380dp">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="200dp">
++
++
++            <com.google.android.material.textfield.TextInputLayout
++                android:id="@+id/textSearchPharmacy"
++                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="32dp"
++                android:layout_marginTop="32dp"
++                android:layout_marginEnd="32dp"
++                android:hint="Search"
++                app:boxStrokeColor="@color/lightblue"
++                app:helperTextTextColor="@color/red"
++                app:hintTextColor="@color/lightblue"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:startIconDrawable="@drawable/ic_baseline_search_24"
++                tools:ignore="MissingConstraints">
++
++                <com.google.android.material.textfield.TextInputEditText
++                    android:id="@+id/loginUsername"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content" />
++            </com.google.android.material.textfield.TextInputLayout>
++
++
++
++            <androidx.recyclerview.widget.RecyclerView
++                android:id="@+id/MyPrescriptionRecycle"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="0dp"
++                android:layout_marginTop="20dp"
++                android:layout_marginEnd="0dp"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toBottomOf="@+id/textSearchPharmacy"
++                tools:ignore="MissingConstraints"
++                tools:listitem="@layout/select_pharmacy_recycler_item">
++
++            </androidx.recyclerview.widget.RecyclerView>
++
++        </androidx.constraintlayout.widget.ConstraintLayout>
++
++
++
++    </ScrollView>
++
++    <androidx.coordinatorlayout.widget.CoordinatorLayout
++        android:layout_width="wrap_content"
++        android:layout_height="match_parent"
++        android:background="@android:color/transparent">
++
++        <com.google.android.material.bottomappbar.BottomAppBar
++            android:id="@+id/bottomAppBar"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_gravity="bottom"
++            app:fabCradleMargin="20dp"
++            app:fabCradleRoundedCornerRadius="20dp"
++            app:fabCradleVerticalOffset="10dp">
++
++            <com.google.android.material.bottomnavigation.BottomNavigationView
++                android:id="@+id/bottomNavigationView"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginEnd="15dp"
++                android:background="@android:color/transparent"
++                app:menu="@menu/bottom_nav_menu" />
++
++        </com.google.android.material.bottomappbar.BottomAppBar>
++
++        <com.google.android.material.floatingactionbutton.FloatingActionButton
++            android:id="@+id/fab"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:src="@drawable/ic_add"
++            app:layout_anchor="@id/bottomAppBar"
++            android:backgroundTint="@color/bluegreen"/>
++
++    </androidx.coordinatorlayout.widget.CoordinatorLayout>
++
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/drawable/rounded_bottom_appbar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<shape xmlns:android=\"http://schemas.android.com/apk/res/android\" android:shape=\"rectangle\">\r\n    <solid android:color=\"@color/bluegreen\"/>\r\n    <corners android:bottomLeftRadius=\"30dp\" android:bottomRightRadius=\"30dp\"/>\r\n</shape>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/rounded_bottom_appbar.xml b/app/src/main/res/drawable/rounded_bottom_appbar.xml
+--- a/app/src/main/res/drawable/rounded_bottom_appbar.xml	(revision 884b0e39d8c378dc9955de3210f40684f75d4b33)
++++ b/app/src/main/res/drawable/rounded_bottom_appbar.xml	(date 1671176938000)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+     <solid android:color="@color/bluegreen"/>
+-    <corners android:bottomLeftRadius="30dp" android:bottomRightRadius="30dp"/>
+-</shape>
+\ No newline at end of file
++    <corners android:bottomLeftRadius="30dp"
++        android:bottomRightRadius="30dp"/>
++</shape>
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"GRADLE\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision 884b0e39d8c378dc9955de3210f40684f75d4b33)
++++ b/.idea/gradle.xml	(date 1672419070935)
+@@ -1,6 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+Index: app/src/main/res/layout/activity_payment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:id=\"@+id/topprofilebar\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".Payment\"\r\n    android:background=\"@color/white\">\r\n\r\n\r\n\r\n    <com.google.android.material.appbar.AppBarLayout\r\n        android:id=\"@+id/appBarLayout\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:background=\"@drawable/rounded_bottom_appbar\"\r\n        app:elevation=\"0dp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n        <androidx.constraintlayout.widget.ConstraintLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:padding=\"10dp\">\r\n\r\n            <androidx.appcompat.widget.Toolbar\r\n                android:id=\"@+id/myToolbar\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"50dp\"\r\n                android:background=\"@color/bluegreen\"\r\n                android:minHeight=\"?attr/actionBarSize\"\r\n                android:theme=\"?attr/actionBarTheme\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintHorizontal_bias=\"0.0\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n            <de.hdodenhof.circleimageview.CircleImageView\r\n                android:id=\"@+id/profile_image\"\r\n                android:layout_width=\"48dp\"\r\n                android:layout_height=\"48dp\"\r\n                android:src=\"@drawable/profile3\"\r\n                app:layout_constraintBottom_toBottomOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/appname\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"12dp\"\r\n                android:text=\"HEY PHARMA\"\r\n                android:textColor=\"@color/lightblue\"\r\n                android:textSize=\"20sp\"\r\n                app:layout_constraintStart_toEndOf=\"@+id/profile_image\"\r\n                app:layout_constraintTop_toTopOf=\"@+id/profile_image\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/welcome\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"Welcome Back \"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"14sp\"\r\n                app:layout_constraintStart_toStartOf=\"@+id/appname\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/appname\" />\r\n\r\n            <ImageView\r\n                android:id=\"@+id/notificationsImage\"\r\n                android:layout_width=\"30dp\"\r\n                android:layout_height=\"30dp\" android:visibility=\"invisible\"\r\n                android:src=\"@drawable/ic_baseline_home_24\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"@+id/profile_image\" />\r\n\r\n\r\n        </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n    </com.google.android.material.appbar.AppBarLayout>\r\n\r\n    <com.google.android.material.textview.MaterialTextView\r\n        android:id=\"@+id/Payment\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"32dp\"\r\n        android:layout_marginTop=\"10dp\"\r\n        android:layout_marginEnd=\"32dp\"\r\n        android:layout_marginBottom=\"24dp\"\r\n        android:text=\"PAYMENT \"\r\n        android:textColor=\"@color/bluegreen\"\r\n        android:textSize=\"24dp\"\r\n        android:textStyle=\"bold\"\r\n        app:layout_constraintTop_toBottomOf=\"@id/appBarLayout\"\r\n        tools:ignore=\"MissingConstraints\" />\r\n\r\n\r\n    <ScrollView\r\n\r\n        android:layout_width=\"fill_parent\"\r\n        android:layout_height=\"380dp\">\r\n\r\n        <androidx.constraintlayout.widget.ConstraintLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\">\r\n\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:id=\"@+id/ShippingDetailsCard\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"32dp\"\r\n                android:layout_marginTop=\"15dp\"\r\n                android:layout_marginEnd=\"32dp\"\r\n                android:clickable=\"true\"\r\n                app:cardBackgroundColor=\"@color/white\"\r\n                app:cardCornerRadius=\"15dp\"\r\n                app:cardElevation=\"10dp\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\"\r\n                tools:ignore=\"MissingConstraints\">\r\n\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <TextView\r\n                        android:id=\"@+id/shippingDetails\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:text=\"Shipping Details\"\r\n                        android:textAlignment=\"center\"\r\n                        android:textAppearance=\"?attr/textAppearanceHeadline6\"\r\n                        android:textColor=\"@color/darkgray\" />\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputName\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:hint=\"Full Name\"\r\n                        app:boxStrokeColor=\"@color/lightblue\"\r\n                        app:helperText=\"Required\"\r\n                        app:helperTextTextColor=\"@color/red\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/shippingDetails\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputName\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputAddressLine1\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:hint=\"Address Line 1\"\r\n                        app:boxStrokeColor=\"@color/lightblue\"\r\n                        app:helperText=\"Required\"\r\n                        app:helperTextTextColor=\"@color/red\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/InputName\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputAddressLine1\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputAddressLine2\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:hint=\"Address Line 2\"\r\n                        app:boxStrokeColor=\"@color/lightblue\"\r\n                        app:helperText=\"Required\"\r\n                        app:helperTextTextColor=\"@color/red\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/InputAddressLine1\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputAddressLine2\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputCity\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:hint=\"City\"\r\n                        app:boxStrokeColor=\"@color/lightblue\"\r\n                        app:helperText=\"Required\"\r\n                        app:helperTextTextColor=\"@color/red\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/InputAddressLine2\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputCity\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputProvince\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:hint=\"Province\"\r\n                        app:boxStrokeColor=\"@color/lightblue\"\r\n                        app:helperText=\"Required\"\r\n                        app:helperTextTextColor=\"@color/red\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/InputCity\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputProvince\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                    <com.google.android.material.textfield.TextInputLayout\r\n                        android:id=\"@+id/InputAddressLine1Tp\"\r\n                        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_marginEnd=\"32dp\"\r\n                        android:layout_marginBottom=\"15dp\"\r\n                        android:hint=\"Telephone\"\r\n                        app:boxStrokeColor=\"@color/lightblue\"\r\n                        app:helperText=\"Required\"\r\n                        app:helperTextTextColor=\"@color/red\"\r\n                        app:hintTextColor=\"@color/lightblue\"\r\n                        app:layout_constraintEnd_toEndOf=\"parent\"\r\n                        app:layout_constraintStart_toStartOf=\"parent\"\r\n                        app:layout_constraintTop_toBottomOf=\"@+id/InputProvince\">\r\n\r\n                        <com.google.android.material.textfield.TextInputEditText\r\n                            android:id=\"@+id/textInputTp\"\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"32dp\" />\r\n                    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:id=\"@+id/PaymentDetails\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"32dp\"\r\n                android:layout_marginTop=\"15dp\"\r\n                android:layout_marginEnd=\"32dp\"\r\n                android:layout_marginBottom=\"32dp\"\r\n                android:clickable=\"true\"\r\n                app:cardBackgroundColor=\"@color/white\"\r\n                app:cardCornerRadius=\"15dp\"\r\n                app:cardElevation=\"10dp\"\r\n                app:layout_constraintBottom_toBottomOf=\"parent\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/ShippingDetailsCard\"\r\n\r\n                tools:ignore=\"DuplicateIds,MissingConstraints\">\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"match_parent\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <TextView\r\n                        android:id=\"@+id/PaymetType\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginTop=\"10dp\"\r\n                        android:layout_gravity=\"center\"\r\n                        android:text=\"Payment Type\"\r\n                        android:textAlignment=\"center\"\r\n                        android:textAppearance=\"?attr/textAppearanceHeadline6\"\r\n                        android:textColor=\"@color/darkgray\" />\r\n\r\n                    <com.google.android.material.radiobutton.MaterialRadioButton\r\n                        android:id=\"@+id/radioInputCod\"\r\n                        android:layout_width=\"wrap_content\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:text=\"Cash on Delivery\"\r\n                        android:layout_marginTop=\"15dp\"\r\n                        android:textSize=\"16dp\"/>\r\n\r\n                    <com.google.android.material.radiobutton.MaterialRadioButton\r\n                        android:id=\"@+id/radioInputEzCash\"\r\n                        android:layout_width=\"wrap_content\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:layout_marginStart=\"32dp\"\r\n                        android:text=\"EZ Cash\"\r\n                        android:layout_marginTop=\"15dp\"\r\n                        android:layout_marginBottom=\"15dp\"\r\n                        android:textSize=\"16dp\"/>\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n\r\n        </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n    </ScrollView>\r\n\r\n    <androidx.coordinatorlayout.widget.CoordinatorLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"@android:color/transparent\">\r\n\r\n        <com.google.android.material.bottomappbar.BottomAppBar\r\n            android:id=\"@+id/bottomAppBar\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"bottom\"\r\n            app:fabCradleMargin=\"20dp\"\r\n            app:fabCradleRoundedCornerRadius=\"20dp\"\r\n            app:fabCradleVerticalOffset=\"10dp\">\r\n\r\n            <com.google.android.material.bottomnavigation.BottomNavigationView\r\n                android:id=\"@+id/bottomNavigationView\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"match_parent\"\r\n                android:layout_marginEnd=\"15dp\"\r\n                android:background=\"@android:color/transparent\"\r\n                app:menu=\"@menu/bottom_nav_menu\" />\r\n\r\n        </com.google.android.material.bottomappbar.BottomAppBar>\r\n\r\n        <com.google.android.material.floatingactionbutton.FloatingActionButton\r\n            android:id=\"@+id/fab\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:src=\"@drawable/ic_add\"\r\n            app:layout_anchor=\"@id/bottomAppBar\"\r\n            android:backgroundTint=\"@color/bluegreen\"/>\r\n\r\n    </androidx.coordinatorlayout.widget.CoordinatorLayout>\r\n\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_payment.xml b/app/src/main/res/layout/activity_payment.xml
+--- a/app/src/main/res/layout/activity_payment.xml	(revision 884b0e39d8c378dc9955de3210f40684f75d4b33)
++++ b/app/src/main/res/layout/activity_payment.xml	(date 1670840810000)
+@@ -161,7 +161,7 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputName"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
+                     <com.google.android.material.textfield.TextInputLayout
+@@ -184,7 +184,7 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputAddressLine1"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
+                     <com.google.android.material.textfield.TextInputLayout
+@@ -207,7 +207,7 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputAddressLine2"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
+                     <com.google.android.material.textfield.TextInputLayout
+@@ -230,7 +230,7 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputCity"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
+                     <com.google.android.material.textfield.TextInputLayout
+@@ -253,7 +253,7 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputProvince"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
+                     <com.google.android.material.textfield.TextInputLayout
+@@ -277,7 +277,7 @@
+                         <com.google.android.material.textfield.TextInputEditText
+                             android:id="@+id/textInputTp"
+                             android:layout_width="match_parent"
+-                            android:layout_height="32dp" />
++                            android:layout_height="wrap_content" />
+                     </com.google.android.material.textfield.TextInputLayout>
+ 
+                 </LinearLayout>
+Index: app/src/main/res/drawable/ic_baseline_search_24.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_baseline_search_24.xml b/app/src/main/res/drawable/ic_baseline_search_24.xml
+new file mode 100644
+--- /dev/null	(date 1672420748211)
++++ b/app/src/main/res/drawable/ic_baseline_search_24.xml	(date 1672420748211)
+@@ -0,0 +1,5 @@
++<vector android:height="24dp" android:tint="#000000"
++    android:viewportHeight="24" android:viewportWidth="24"
++    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M15.5,14h-0.79l-0.28,-0.27C15.41,12.59 16,11.11 16,9.5 16,5.91 13.09,3 9.5,3S3,5.91 3,9.5 5.91,16 9.5,16c1.61,0 3.09,-0.59 4.23,-1.57l0.27,0.28v0.79l5,4.99L20.49,19l-4.99,-5zM9.5,14C7.01,14 5,11.99 5,9.5S7.01,5 9.5,5 14,7.01 14,9.5 11.99,14 9.5,14z"/>
++</vector>
+Index: app/src/main/java/com/saclim/heypharmaapp/Profile.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.saclim.heypharmaapp\r\n\r\nimport android.content.Intent\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport com.google.android.material.bottomnavigation.BottomNavigationView\r\nimport kotlinx.android.synthetic.main.activity_dashboard.*\r\n\r\nclass Profile : AppCompatActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_profile)\r\n\r\n        bottomNavigationView.background = null\r\n        bottomNavigationView.menu.getItem(3).isChecked=true\r\n\r\n        val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->\r\n            when (item.itemId) {\r\n                R.id.Payment -> {\r\n                    val intent= Intent(this, Payment::class.java)\r\n                    finish()\r\n                    startActivity(intent)\r\n                    return@OnNavigationItemSelectedListener true\r\n                }\r\n                R.id.Home -> {\r\n                    val intent= Intent(this,Dashboard::class.java)\r\n                    finish()\r\n                    startActivity(intent)\r\n                    return@OnNavigationItemSelectedListener true\r\n                }\r\n\r\n                R.id.Logout -> {\r\n                    val intent= Intent(this, LoginScreen::class.java)\r\n                    finish()\r\n                    startActivity(intent)\r\n                    return@OnNavigationItemSelectedListener true\r\n                }\r\n\r\n            }\r\n            false\r\n        }\r\n\r\n        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)\r\n\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/saclim/heypharmaapp/Profile.kt b/app/src/main/java/com/saclim/heypharmaapp/Profile.kt
+--- a/app/src/main/java/com/saclim/heypharmaapp/Profile.kt	(revision 884b0e39d8c378dc9955de3210f40684f75d4b33)
++++ b/app/src/main/java/com/saclim/heypharmaapp/Profile.kt	(date 1670839170000)
+@@ -12,7 +12,7 @@
+         setContentView(R.layout.activity_profile)
+ 
+         bottomNavigationView.background = null
+-        bottomNavigationView.menu.getItem(3).isChecked=true
++        bottomNavigationView.menu.getItem(2).isEnabled = false
+ 
+         val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+             when (item.itemId) {
+@@ -22,13 +22,13 @@
+                     startActivity(intent)
+                     return@OnNavigationItemSelectedListener true
+                 }
+-                R.id.Home -> {
+-                    val intent= Intent(this,Dashboard::class.java)
++
++                R.id.Profile -> {
++                    val intent= Intent(this, Profile::class.java)
+                     finish()
+                     startActivity(intent)
+                     return@OnNavigationItemSelectedListener true
+                 }
+-
+                 R.id.Logout -> {
+                     val intent= Intent(this, LoginScreen::class.java)
+                     finish()
+@@ -36,12 +36,11 @@
+                     return@OnNavigationItemSelectedListener true
+                 }
+ 
++
+             }
+             false
+         }
+ 
+         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+-
+-
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/saclim/heypharmaapp/BuyNow.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/saclim/heypharmaapp/BuyNow.kt b/app/src/main/java/com/saclim/heypharmaapp/BuyNow.kt
+new file mode 100644
+--- /dev/null	(date 1672421178431)
++++ b/app/src/main/java/com/saclim/heypharmaapp/BuyNow.kt	(date 1672421178431)
+@@ -0,0 +1,11 @@
++package com.saclim.heypharmaapp
++
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++
++class BuyNow : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_buy_now)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_shipping_details.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_shipping_details.xml b/app/src/main/res/layout/activity_shipping_details.xml
+new file mode 100644
+--- /dev/null	(date 1672424874793)
++++ b/app/src/main/res/layout/activity_shipping_details.xml	(date 1672424874793)
+@@ -0,0 +1,441 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:id="@+id/topprofilebar"
++    android:orientation="vertical"
++    tools:context=".ShippingDetails"
++    android:background="@color/white">
++
++
++
++    <com.google.android.material.appbar.AppBarLayout
++        android:id="@+id/appBarLayout"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="@drawable/rounded_bottom_appbar"
++        app:elevation="0dp"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:padding="10dp">
++
++            <androidx.appcompat.widget.Toolbar
++                android:id="@+id/myToolbar"
++                android:layout_width="match_parent"
++                android:layout_height="50dp"
++                android:background="@color/bluegreen"
++                android:minHeight="?attr/actionBarSize"
++                android:theme="?attr/actionBarTheme"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.0"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <de.hdodenhof.circleimageview.CircleImageView
++                android:id="@+id/profile_image"
++                android:layout_width="48dp"
++                android:layout_height="48dp"
++                android:src="@drawable/profile3"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <TextView
++                android:id="@+id/appname"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="12dp"
++                android:text="HEY PHARMA"
++                android:textColor="@color/lightblue"
++                android:textSize="20sp"
++                app:layout_constraintStart_toEndOf="@+id/profile_image"
++                app:layout_constraintTop_toTopOf="@+id/profile_image" />
++
++            <TextView
++                android:id="@+id/welcome"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="Welcome Back "
++                android:textColor="@color/black"
++                android:textSize="14sp"
++                app:layout_constraintStart_toStartOf="@+id/appname"
++                app:layout_constraintTop_toBottomOf="@+id/appname" />
++
++            <ImageView
++                android:id="@+id/notificationsImage"
++                android:layout_width="30dp"
++                android:layout_height="30dp" android:visibility="invisible"
++                android:src="@drawable/ic_baseline_home_24"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintTop_toTopOf="@+id/profile_image" />
++
++
++        </androidx.constraintlayout.widget.ConstraintLayout>
++
++    </com.google.android.material.appbar.AppBarLayout>
++
++    <com.google.android.material.textview.MaterialTextView
++        android:id="@+id/shippingDetails"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="32dp"
++        android:layout_marginTop="10dp"
++        android:layout_marginEnd="32dp"
++        android:layout_marginBottom="24dp"
++        android:text="SHIPPING DETAILS"
++        android:textColor="@color/bluegreen"
++        android:textSize="24dp"
++        android:textStyle="bold"
++        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
++        tools:ignore="MissingConstraints" />
++
++
++    <ScrollView
++
++        android:layout_width="fill_parent"
++        android:layout_height="380dp">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content">
++
++
++            <com.google.android.material.card.MaterialCardView
++                android:id="@+id/ShippingDetails"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="32dp"
++                android:layout_marginTop="15dp"
++                android:layout_marginEnd="32dp"
++                android:layout_marginBottom="32dp"
++                app:cardBackgroundColor="@color/white"
++                app:cardCornerRadius="15dp"
++                app:cardElevation="10dp"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent"
++                tools:ignore="MissingConstraints">
++
++
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:orientation="vertical">
++
++                    <TextView
++                        android:id="@+id/lblShippingAddress"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:layout_marginStart="20dp"
++                        android:layout_marginBottom="20dp"
++                        android:layout_marginTop="10dp"
++                        android:text="Shipping Address "
++                        android:textAppearance="?attr/textAppearanceHeadline6"
++                        android:textColor="@color/darkgray" />
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblAddressNo"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="No"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:id="@+id/txtAddressNo"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="No 45"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblAddressStreet"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Street"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:id="@+id/txtAddressStreet"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Colombo Road "
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblAddressLine1"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Line 1"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:id="@+id/txtAddressLine1"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Colombo "
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblAddressLine2"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Line 2"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:id="@+id/txtAddressLine2"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Colombo 7 "
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblAddressCity"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="City"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:id="@+id/txtAddressCity"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Colombo "
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblAddressProvince"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Province"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:id="@+id/txtAddressProvince"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginBottom="20dp"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Western Province "
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginBottom="20dp"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="* Delivery charge not included"
++                            android:textSize="18dp"
++                            android:textColor="@color/red" />
++
++                    </LinearLayout>
++
++
++
++
++
++                </LinearLayout>
++
++
++            </com.google.android.material.card.MaterialCardView>
++
++            <com.google.android.material.button.MaterialButton
++                android:id="@+id/btnProceed"
++                style="@style/Widget.MaterialComponents.Button"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="32dp"
++                android:layout_marginTop="10dp"
++                android:layout_marginEnd="32dp"
++                android:backgroundTint="@color/bluegreen"
++                android:text="Proceed"
++                android:textColor="@color/white"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toBottomOf="@+id/ShippingDetails"
++
++                tools:ignore="MissingConstraints" />
++
++
++
++        </androidx.constraintlayout.widget.ConstraintLayout>
++
++    </ScrollView>
++
++    <androidx.coordinatorlayout.widget.CoordinatorLayout
++        android:layout_width="wrap_content"
++        android:layout_height="match_parent"
++        android:background="@android:color/transparent">
++
++        <com.google.android.material.bottomappbar.BottomAppBar
++            android:id="@+id/bottomAppBar"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_gravity="bottom"
++            app:fabCradleMargin="20dp"
++            app:fabCradleRoundedCornerRadius="20dp"
++            app:fabCradleVerticalOffset="10dp">
++
++            <com.google.android.material.bottomnavigation.BottomNavigationView
++                android:id="@+id/bottomNavigationView"
++                android:layout_width="wrap_content"
++                android:layout_height="match_parent"
++                android:layout_marginEnd="15dp"
++                android:background="@android:color/transparent"
++                app:menu="@menu/bottom_nav_menu" />
++
++        </com.google.android.material.bottomappbar.BottomAppBar>
++
++        <com.google.android.material.floatingactionbutton.FloatingActionButton
++            android:id="@+id/fab"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:src="@drawable/ic_add"
++            app:layout_anchor="@id/bottomAppBar"
++            android:backgroundTint="@color/bluegreen"/>
++
++    </androidx.coordinatorlayout.widget.CoordinatorLayout>
++
++
++</LinearLayout>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 884b0e39d8c378dc9955de3210f40684f75d4b33)
++++ b/.idea/vcs.xml	(date 1672419026477)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_buy_now.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_buy_now.xml b/app/src/main/res/layout/activity_buy_now.xml
+new file mode 100644
+--- /dev/null	(date 1672424874803)
++++ b/app/src/main/res/layout/activity_buy_now.xml	(date 1672424874803)
+@@ -0,0 +1,409 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:id="@+id/topprofilebar"
++    android:orientation="vertical"
++    tools:context=".BuyNow"
++    android:background="@color/white">
++
++
++
++    <com.google.android.material.appbar.AppBarLayout
++        android:id="@+id/appBarLayout"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="@drawable/rounded_bottom_appbar"
++        app:elevation="0dp"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:padding="10dp">
++
++            <androidx.appcompat.widget.Toolbar
++                android:id="@+id/myToolbar"
++                android:layout_width="match_parent"
++                android:layout_height="50dp"
++                android:background="@color/bluegreen"
++                android:minHeight="?attr/actionBarSize"
++                android:theme="?attr/actionBarTheme"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.0"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <de.hdodenhof.circleimageview.CircleImageView
++                android:id="@+id/profile_image"
++                android:layout_width="48dp"
++                android:layout_height="48dp"
++                android:src="@drawable/profile3"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <TextView
++                android:id="@+id/appname"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="12dp"
++                android:text="HEY PHARMA"
++                android:textColor="@color/lightblue"
++                android:textSize="20sp"
++                app:layout_constraintStart_toEndOf="@+id/profile_image"
++                app:layout_constraintTop_toTopOf="@+id/profile_image" />
++
++            <TextView
++                android:id="@+id/welcome"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="Welcome Back "
++                android:textColor="@color/black"
++                android:textSize="14sp"
++                app:layout_constraintStart_toStartOf="@+id/appname"
++                app:layout_constraintTop_toBottomOf="@+id/appname" />
++
++            <ImageView
++                android:id="@+id/notificationsImage"
++                android:layout_width="30dp"
++                android:layout_height="30dp" android:visibility="invisible"
++                android:src="@drawable/ic_baseline_home_24"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintTop_toTopOf="@+id/profile_image" />
++
++
++        </androidx.constraintlayout.widget.ConstraintLayout>
++
++    </com.google.android.material.appbar.AppBarLayout>
++
++    <com.google.android.material.textview.MaterialTextView
++        android:id="@+id/Payment"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="32dp"
++        android:layout_marginTop="10dp"
++        android:layout_marginEnd="32dp"
++        android:layout_marginBottom="24dp"
++        android:text="BUY NOW"
++        android:textColor="@color/bluegreen"
++        android:textSize="24dp"
++        android:textStyle="bold"
++        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
++        tools:ignore="MissingConstraints" />
++
++
++    <ScrollView
++
++        android:layout_width="fill_parent"
++        android:layout_height="380dp">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content">
++
++
++            <com.google.android.material.card.MaterialCardView
++                android:id="@+id/BuyNow"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="32dp"
++                android:layout_marginTop="15dp"
++                android:layout_marginEnd="32dp"
++                android:layout_marginBottom="32dp"
++                app:cardBackgroundColor="@color/white"
++                app:cardCornerRadius="15dp"
++                app:cardElevation="10dp"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent"
++                tools:ignore="MissingConstraints">
++
++
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:orientation="vertical">
++
++                    <TextView
++                        android:id="@+id/lblPharmacy"
++                        android:layout_width="100dp"
++                        android:layout_height="wrap_content"
++                        android:layout_marginBottom="20dp"
++                        android:layout_marginStart="20dp"
++                        android:layout_marginTop="10dp"
++                        android:text="Pharmacy "
++                        android:textAppearance="?attr/textAppearanceHeadline6"
++                        android:textColor="@color/darkgray" />
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblPharmacyName"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Name"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:id="@+id/txtPharmacyName"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="ABC Pharmacy"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblPharmacyTp"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Mobile"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:id="@+id/txtPharmacyTp"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="0777599585 "
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="vertical">
++
++                        <TextView
++                            android:id="@+id/lblBillSummery"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginBottom="20dp"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="25dp"
++                            android:text="Bill Summury "
++                            android:textAppearance="?attr/textAppearanceHeadline6"
++                            android:textColor="@color/darkgray" />
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="match_parent"
++                            android:orientation="horizontal">
++
++                            <TextView
++                                android:id="@+id/lblTotal"
++                                android:layout_width="90dp"
++                                android:layout_height="wrap_content"
++                                android:layout_marginStart="20dp"
++                                android:layout_marginTop="10dp"
++                                android:text="Total"
++                                android:textSize="18dp"
++                                android:textColor="@color/black" />
++
++                            <TextView
++                                android:layout_width="wrap_content"
++                                android:layout_height="wrap_content"
++                                android:layout_marginTop="10dp"
++                                android:text=":"
++                                android:textSize="18dp"
++                                android:textColor="@color/black" />
++
++                            <TextView
++                                android:id="@+id/txtTotal"
++                                android:layout_width="130dp"
++                                android:layout_height="wrap_content"
++                                android:layout_marginStart="20dp"
++                                android:layout_marginTop="10dp"
++                                android:text="1500.00"
++                                android:textAlignment="textEnd"
++                                android:textSize="18dp"
++                                android:textColor="@color/black" />
++
++                        </LinearLayout>
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="match_parent"
++                            android:orientation="horizontal">
++
++                            <TextView
++                                android:id="@+id/lblCharges"
++                                android:layout_width="90dp"
++                                android:layout_height="wrap_content"
++                                android:layout_marginStart="20dp"
++                                android:layout_marginTop="10dp"
++                                android:text="Charges"
++                                android:textSize="18dp"
++                                android:textColor="@color/black" />
++
++                            <TextView
++                                android:layout_width="wrap_content"
++                                android:layout_height="wrap_content"
++                                android:layout_marginTop="10dp"
++                                android:text=":"
++                                android:textSize="18dp"
++                                android:textColor="@color/black" />
++
++                            <TextView
++                                android:id="@+id/txtCharges"
++                                android:layout_width="130dp"
++                                android:layout_height="wrap_content"
++                                android:layout_marginStart="20dp"
++                                android:layout_marginTop="10dp"
++                                android:text="250.00"
++                                android:textAlignment="textEnd"
++                                android:textSize="18dp"
++                                android:textColor="@color/black" />
++
++                        </LinearLayout>
++
++
++                        <LinearLayout
++                            android:layout_width="match_parent"
++                            android:layout_height="match_parent"
++                            android:orientation="horizontal"
++                            android:layout_marginBottom="20dp">
++
++                            <TextView
++                                android:id="@+id/lblNet"
++                                android:layout_width="90dp"
++                                android:layout_height="wrap_content"
++                                android:layout_marginStart="20dp"
++                                android:layout_marginTop="10dp"
++                                android:text="Net"
++                                android:textSize="18dp"
++                                android:textColor="@color/black" />
++
++                            <TextView
++                                android:layout_width="wrap_content"
++                                android:layout_height="wrap_content"
++                                android:layout_marginTop="10dp"
++                                android:text=":"
++                                android:textSize="18dp"
++                                android:textColor="@color/black" />
++
++                            <TextView
++                                android:id="@+id/txtNet"
++                                android:layout_width="130dp"
++                                android:layout_height="wrap_content"
++                                android:layout_marginStart="20dp"
++                                android:layout_marginTop="10dp"
++                                android:text="1750.00"
++                                android:textAlignment="textEnd"
++                                android:textSize="18dp"
++                                android:textColor="@color/black" />
++
++                        </LinearLayout>
++
++
++                    </LinearLayout>
++
++
++                </LinearLayout>
++
++
++            </com.google.android.material.card.MaterialCardView>
++
++            <com.google.android.material.button.MaterialButton
++                android:id="@+id/btnBuyNow"
++                style="@style/Widget.MaterialComponents.Button"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="32dp"
++                android:layout_marginTop="10dp"
++                android:layout_marginEnd="32dp"
++                android:backgroundTint="@color/bluegreen"
++                android:text="Buy Now"
++                android:textColor="@color/white"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toBottomOf="@+id/BuyNow"
++
++                tools:ignore="MissingConstraints" />
++
++
++
++        </androidx.constraintlayout.widget.ConstraintLayout>
++
++    </ScrollView>
++
++    <androidx.coordinatorlayout.widget.CoordinatorLayout
++        android:layout_width="wrap_content"
++        android:layout_height="match_parent"
++        android:background="@android:color/transparent">
++
++        <com.google.android.material.bottomappbar.BottomAppBar
++            android:id="@+id/bottomAppBar"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_gravity="bottom"
++            app:fabCradleMargin="20dp"
++            app:fabCradleRoundedCornerRadius="20dp"
++            app:fabCradleVerticalOffset="10dp">
++
++            <com.google.android.material.bottomnavigation.BottomNavigationView
++                android:id="@+id/bottomNavigationView"
++                android:layout_width="wrap_content"
++                android:layout_height="match_parent"
++                android:layout_marginEnd="15dp"
++                android:background="@android:color/transparent"
++                app:menu="@menu/bottom_nav_menu" />
++
++        </com.google.android.material.bottomappbar.BottomAppBar>
++
++        <com.google.android.material.floatingactionbutton.FloatingActionButton
++            android:id="@+id/fab"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:src="@drawable/ic_add"
++            app:layout_anchor="@id/bottomAppBar"
++            android:backgroundTint="@color/bluegreen"/>
++
++    </androidx.coordinatorlayout.widget.CoordinatorLayout>
++
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/saclim/heypharmaapp/PaymentDetails.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/saclim/heypharmaapp/PaymentDetails.kt b/app/src/main/java/com/saclim/heypharmaapp/PaymentDetails.kt
+new file mode 100644
+--- /dev/null	(date 1672423864382)
++++ b/app/src/main/java/com/saclim/heypharmaapp/PaymentDetails.kt	(date 1672423864382)
+@@ -0,0 +1,11 @@
++package com.saclim.heypharmaapp
++
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++
++class PaymentDetails : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_payment_details)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\">\r\n\r\n    <uses-permission android:name=\"android.permission.CAMERA\" />\r\n    <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.HeyPharma\"\r\n        tools:targetApi=\"31\">\r\n        <activity\r\n            android:name=\".BuyMedicine\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".MyPrescription\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".ScanDetails\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".Profile\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".Payment\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".ScanHere\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".ScanDetails\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".Dashboard\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".RegistrationScreen\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".IntroActivity\"\r\n            android:exported=\"false\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\">\r\n            >\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".SplashScreen\"\r\n            android:exported=\"true\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".LoginScreen\"\r\n            android:exported=\"true\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 884b0e39d8c378dc9955de3210f40684f75d4b33)
++++ b/app/src/main/AndroidManifest.xml	(date 1672423864454)
+@@ -17,57 +17,71 @@
+         android:theme="@style/Theme.HeyPharma"
+         tools:targetApi="31">
+         <activity
+-            android:name=".BuyMedicine"
++            android:name=".PaymentDetails"
+             android:exported="false">
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
+         <activity
+-            android:name=".MyPrescription"
++            android:name=".ShippingDetails"
+             android:exported="false">
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
+         <activity
+-            android:name=".ScanDetails"
++            android:name=".BuyNow"
+             android:exported="false">
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
+         <activity
+-            android:name=".Profile"
++            android:name=".BuyMedicine"
+             android:exported="false">
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
+         <activity
+-            android:name=".Payment"
++            android:name=".MyPrescription"
+             android:exported="false">
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
+         <activity
+-            android:name=".ScanHere"
++            android:name=".ScanDetails"
+             android:exported="false">
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
+         <activity
+-            android:name=".ScanDetails"
++            android:name=".Profile"
+             android:exported="false">
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
+         <activity
+-            android:name=".Dashboard"
++            android:name=".Payment"
+             android:exported="false">
++            <meta-data
++                android:name="android.app.lib_name"
++                android:value="" />
++        </activity>
++        <activity
++            android:name=".ScanHere"
++            android:exported="false">
++            <meta-data
++                android:name="android.app.lib_name"
++                android:value="" />
++        </activity>
++        <activity
++            android:name=".Dashboard"
++            android:exported="true">
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+Index: app/src/main/java/com/saclim/heypharmaapp/ShippingDetails.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/saclim/heypharmaapp/ShippingDetails.kt b/app/src/main/java/com/saclim/heypharmaapp/ShippingDetails.kt
+new file mode 100644
+--- /dev/null	(date 1672423839195)
++++ b/app/src/main/java/com/saclim/heypharmaapp/ShippingDetails.kt	(date 1672423839195)
+@@ -0,0 +1,11 @@
++package com.saclim.heypharmaapp
++
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++
++class ShippingDetails : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_shipping_details)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_payment_details.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_payment_details.xml b/app/src/main/res/layout/activity_payment_details.xml
+new file mode 100644
+--- /dev/null	(date 1672425562572)
++++ b/app/src/main/res/layout/activity_payment_details.xml	(date 1672425562572)
+@@ -0,0 +1,391 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:id="@+id/topprofilebar"
++    android:orientation="vertical"
++    tools:context=".PaymentDetails"
++    android:background="@color/white">
++
++
++
++    <com.google.android.material.appbar.AppBarLayout
++        android:id="@+id/appBarLayout"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:background="@drawable/rounded_bottom_appbar"
++        app:elevation="0dp"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:padding="10dp">
++
++            <androidx.appcompat.widget.Toolbar
++                android:id="@+id/myToolbar"
++                android:layout_width="match_parent"
++                android:layout_height="50dp"
++                android:background="@color/bluegreen"
++                android:minHeight="?attr/actionBarSize"
++                android:theme="?attr/actionBarTheme"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.0"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <de.hdodenhof.circleimageview.CircleImageView
++                android:id="@+id/profile_image"
++                android:layout_width="48dp"
++                android:layout_height="48dp"
++                android:src="@drawable/profile3"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <TextView
++                android:id="@+id/appname"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="12dp"
++                android:text="HEY PHARMA"
++                android:textColor="@color/lightblue"
++                android:textSize="20sp"
++                app:layout_constraintStart_toEndOf="@+id/profile_image"
++                app:layout_constraintTop_toTopOf="@+id/profile_image" />
++
++            <TextView
++                android:id="@+id/welcome"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="Welcome Back "
++                android:textColor="@color/black"
++                android:textSize="14sp"
++                app:layout_constraintStart_toStartOf="@+id/appname"
++                app:layout_constraintTop_toBottomOf="@+id/appname" />
++
++            <ImageView
++                android:id="@+id/notificationsImage"
++                android:layout_width="30dp"
++                android:layout_height="30dp" android:visibility="invisible"
++                android:src="@drawable/ic_baseline_home_24"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintTop_toTopOf="@+id/profile_image" />
++
++
++        </androidx.constraintlayout.widget.ConstraintLayout>
++
++    </com.google.android.material.appbar.AppBarLayout>
++
++    <com.google.android.material.textview.MaterialTextView
++        android:id="@+id/shippingDetails"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="32dp"
++        android:layout_marginTop="10dp"
++        android:layout_marginEnd="32dp"
++        android:layout_marginBottom="24dp"
++        android:text="PAYMENT DETAILS"
++        android:textColor="@color/bluegreen"
++        android:textSize="24dp"
++        android:textStyle="bold"
++        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
++        tools:ignore="MissingConstraints" />
++
++
++    <ScrollView
++
++        android:layout_width="fill_parent"
++        android:layout_height="380dp">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content">
++
++
++            <com.google.android.material.card.MaterialCardView
++                android:id="@+id/ShippingDetails"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="32dp"
++                android:layout_marginTop="15dp"
++                android:layout_marginEnd="32dp"
++                android:layout_marginBottom="32dp"
++                app:cardBackgroundColor="@color/white"
++                app:cardCornerRadius="15dp"
++                app:cardElevation="10dp"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent"
++                tools:ignore="MissingConstraints">
++
++
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:orientation="vertical">
++
++                    <TextView
++                        android:id="@+id/lblCod"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:layout_marginStart="20dp"
++                        android:layout_marginBottom="20dp"
++                        android:layout_marginTop="10dp"
++                        android:text="Cash on delivery "
++                        android:textAppearance="?attr/textAppearanceHeadline6"
++                        android:textColor="@color/darkgray" />
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblCodAddress"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Address"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:id="@+id/txtAddressNo"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="No 45 Kegalle Road Bulathkohupitiya"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                    <TextView
++                        android:id="@+id/lblCard"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:layout_marginStart="20dp"
++                        android:layout_marginBottom="20dp"
++                        android:layout_marginTop="10dp"
++                        android:text="Card payment "
++                        android:textAppearance="?attr/textAppearanceHeadline6"
++                        android:textColor="@color/darkgray" />
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblCardNo"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Number"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <EditText
++                            android:id="@+id/txtCardNo"
++                            android:layout_width="200dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="3dp"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblCardBank"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Bank"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <EditText
++                            android:id="@+id/txtCardBank"
++                            android:layout_width="200dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="3dp"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblCardCvc"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="Cvc"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <EditText
++                            android:id="@+id/txtCardCvc"
++                            android:layout_width="200dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="3dp"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                    <LinearLayout
++                        android:layout_width="match_parent"
++                        android:layout_height="match_parent"
++                        android:orientation="horizontal">
++
++                        <TextView
++                            android:id="@+id/lblCardExDate"
++                            android:layout_width="90dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginTop="10dp"
++                            android:text="EX Date"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <TextView
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_marginTop="10dp"
++                            android:text=":"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                        <EditText
++                            android:id="@+id/txtCardExDate"
++                            android:layout_width="200dp"
++                            android:layout_height="wrap_content"
++                            android:layout_marginStart="20dp"
++                            android:layout_marginBottom="20dp"
++                            android:layout_marginTop="3dp"
++                            android:textSize="18dp"
++                            android:textColor="@color/black" />
++
++                    </LinearLayout>
++
++                </LinearLayout>
++
++
++            </com.google.android.material.card.MaterialCardView>
++
++            <com.google.android.material.button.MaterialButton
++                android:id="@+id/btnBuy"
++                style="@style/Widget.MaterialComponents.Button"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginStart="32dp"
++                android:layout_marginTop="10dp"
++                android:layout_marginEnd="32dp"
++                android:backgroundTint="@color/bluegreen"
++                android:text="Buy"
++                android:textColor="@color/white"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toBottomOf="@+id/ShippingDetails"
++
++                tools:ignore="MissingConstraints" />
++
++
++
++        </androidx.constraintlayout.widget.ConstraintLayout>
++
++    </ScrollView>
++
++    <androidx.coordinatorlayout.widget.CoordinatorLayout
++        android:layout_width="wrap_content"
++        android:layout_height="match_parent"
++        android:background="@android:color/transparent">
++
++        <com.google.android.material.bottomappbar.BottomAppBar
++            android:id="@+id/bottomAppBar"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_gravity="bottom"
++            app:fabCradleMargin="20dp"
++            app:fabCradleRoundedCornerRadius="20dp"
++            app:fabCradleVerticalOffset="10dp">
++
++            <com.google.android.material.bottomnavigation.BottomNavigationView
++                android:id="@+id/bottomNavigationView"
++                android:layout_width="wrap_content"
++                android:layout_height="match_parent"
++                android:layout_marginEnd="15dp"
++                android:background="@android:color/transparent"
++                app:menu="@menu/bottom_nav_menu" />
++
++        </com.google.android.material.bottomappbar.BottomAppBar>
++
++        <com.google.android.material.floatingactionbutton.FloatingActionButton
++            android:id="@+id/fab"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:src="@drawable/ic_add"
++            app:layout_anchor="@id/bottomAppBar"
++            android:backgroundTint="@color/bluegreen"/>
++
++    </androidx.coordinatorlayout.widget.CoordinatorLayout>
++
++
++</LinearLayout>
+\ No newline at end of file

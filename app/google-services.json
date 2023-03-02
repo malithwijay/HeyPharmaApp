@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "786715708411",
+    "project_id": "mad-cw-fd0a5",
+    "storage_bucket": "mad-cw-fd0a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786715708411:android:60d6eafaa07a66d3bc595e",
+        "android_client_info": {
+          "package_name": "com.saclim.heypharmaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "786715708411-ed79afoskq6864eqnip8ia7jdqm12s62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6AS4dOnK9zIvI5qZTvTE2g9OPEuI7qRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "786715708411-ed79afoskq6864eqnip8ia7jdqm12s62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
